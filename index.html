@@ -1,16 +1,3186 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/styles.css"/>
-</head>
-<body>
-    <span class="material-icons text-red">
-        search
-        </span>
-        
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon Start -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./assets/img/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./assets/img/favicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./assets/img/favicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./assets/img/favicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./assets/img/favicon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./assets/img/favicon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./assets/img/favicon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./assets/img/favicon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/img/favicon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./assets/img/favicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/img/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./assets/img/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/img/favicon/favicon-16x16.png"
+    />
+    <!-- <link rel="manifest" href="./assets/img/favicon/manifest.json" /> -->
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="./assets/img/favicon/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- Favicon End -->
+    <title>회원상세</title>
+    <!-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons"/> -->
+    <!-- ICONS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- Bootstrap CSS CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <!-- Main Table with tabs -->
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-black font-24 fw-bold">
+            회원상세
+            <span
+              class="text-danger dot-text font-14 fw-medium position-relative mx-2"
+              >필수항목</span
+            >
+          </h1>
+        </div>
+        <div class="col-12">
+          <hr class="my-2" />
+        </div>
+        <div class="col-12">
+          <ul class="nav nav-tabs mt-2 mb-4 justify-content-between">
+            <li class="nav-item">
+              <button
+                class="nav-link active"
+                id="tab-one"
+                data-bs-toggle="tab"
+                data-bs-target="#tab-one-pane"
+                type="button"
+              >
+                기본정보 관리
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                class="nav-link"
+                id="tab-two"
+                data-bs-toggle="tab"
+                data-bs-target="#tab-two-pane"
+                type="button"
+              >
+                투자유형 관리
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                class="nav-link"
+                id="tab-three"
+                data-bs-toggle="tab"
+                data-bs-target="#tab-three-pane"
+                type="button"
+              >
+                입출금내역 조회
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                class="nav-link"
+                id="tab-four"
+                data-bs-toggle="tab"
+                data-bs-target="#tab-four-pane"
+                type="button"
+              >
+                영업내역 조회
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                class="nav-link"
+                id="tab-five"
+                data-bs-toggle="tab"
+                data-bs-target="#tab-five-pane"
+                type="button"
+              >
+                투자내역 조회
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                class="nav-link"
+                id="tab-six"
+                data-bs-toggle="tab"
+                data-bs-target="#tab-six-pane"
+                type="button"
+              >
+                채권내역 조회
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                class="nav-link"
+                id="tab-seven"
+                data-bs-toggle="tab"
+                data-bs-target="#tab-seven-pane"
+                type="button"
+              >
+                SMS 관리
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                class="nav-link"
+                id="tab-eight"
+                data-bs-toggle="tab"
+                data-bs-target="#tab-eight-pane"
+                type="button"
+              >
+                상담내역 관리
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                class="nav-link"
+                id="tab-nine"
+                data-bs-toggle="tab"
+                data-bs-target="#tab-nine-pane"
+                type="button"
+              >
+                1:1문의내역 조회
+              </button>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="tab-one-pane">
+              <div class="row align-items-center">
+                <div class="col-md-4 col-12">
+                  <h2 class="text-black font-20 fw-semibold mb-0">
+                    신청 목록
+                    <span class="text-gray font-14 fw-medium mx-2"
+                      >(총 100명 | 승인대기
+                      <u class="text-danger">1</u>건)</span
+                    >
+                  </h2>
+                </div>
+                <div class="col-md-8 col-12 text-end">
+                  <div class="d-flex justify-content-end align-items-center">
+                    <div>
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>승인여부 전체</option>
+                        <option value="1">승인대기</option>
+                        <option value="2">승인완료</option>
+                        <option value="3">승인거부</option>
+                      </select>
+                    </div>
+                    <div class="mx-2">
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>신청일시순</option>
+                        <option value="1">승인일시순</option>
+                      </select>
+                    </div>
+                    <div>
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>50개씩 보기</option>
+                        <option value="1">51개씩 보기</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <hr class="my-3" />
+                </div>
+              </div>
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  <button type="button" class="btn btn-primary px-4">
+                    등록
+                  </button>
+                </div>
+                <div class="col-md-8">
+                  <div class="d-flex justify-content-end align-items-center">
+                    <div>
+                      <h3 class="text-gray font-14 fw-medium lh-normal mb-0">
+                        선택한 0건
+                      </h3>
+                    </div>
+                    <div class="mx-2">
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>승인상태 변경</option>
+                        <option value="1">승인완료</option>
+                        <option value="2">승인거부</option>
+                      </select>
+                    </div>
+                    <div>
+                      <button
+                        type="button"
+                        class="btn btn-primary font-16 fw-semibold px-4"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modal-one"
+                      >
+                        저장
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row my-2">
+                <div class="col-12">
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                            <div class="form-check m-0">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="flexCheckDefault"
+                              />
+                            </div>
+                          </th>
+                          <th>No</th>
+                          <th>기존유형</th>
+                          <th>신청유형</th>
+                          <th>제출서류</th>
+                          <th>신청일시</th>
+                          <th>승인여부</th>
+                          <th>승인거부 사유</th>
+                          <th>승인일시</th>
+                          <th>관리자</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="form-check m-0">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="flexCheckDefault1"
+                              />
+                            </div>
+                          </td>
+                          <td>1</td>
+                          <td>소득적격</td>
+                          <td>개인전문</td>
+                          <td>
+                            <span class="status">보기</span>
+                          </td>
+                          <td>2023-01-10 09:00:00</td>
+                          <td>
+                            <span class="badge rounded-pill text-bg-warning"
+                              >승인대기</span
+                            >
+                          </td>
+                          <td>
+                            <p class="mb-0">
+                              서류 식별 불가 금융투자업자에 계좌를 개설한지 1년
+                              미만으로 전문투자자 승인 불가
+                            </p>
+                          </td>
+                          <td>2023-01-10 09:00:00</td>
+                          <td>김관리자</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="form-check m-0">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                disabled
+                                id="flexCheckDefault2"
+                              />
+                            </div>
+                          </td>
+                          <td>2</td>
+                          <td>소득적격</td>
+                          <td>개인전문</td>
+                          <td>
+                            <span class="status">보기</span>
+                          </td>
+                          <td>2023-01-10 09:00:00</td>
+                          <td>
+                            <span class="badge rounded-pill text-bg-danger"
+                              >승인거부</span
+                            >
+                          </td>
+                          <td>
+                            <p class="mb-0">
+                              서류 식별 불가 금융투자업자에 계좌를 개설한지 1년
+                              미만으로 전문투자자 승인 불가
+                            </p>
+                          </td>
+                          <td>2023-01-10 09:00:00</td>
+                          <td>김관리자</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="form-check m-0">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                disabled
+                                id="flexCheckDefault3"
+                              />
+                            </div>
+                          </td>
+                          <td>3</td>
+                          <td>소득적격</td>
+                          <td>소득적격</td>
+                          <td>
+                            <span class="status">보기</span>
+                          </td>
+                          <td>2023-01-10 09:00:00</td>
+                          <td>
+                            <span class="badge rounded-pill text-bg-success"
+                              >승인완료</span
+                            >
+                          </td>
+                          <td>
+                            <p class="mb-0">
+                              서류 식별 불가 금융투자업자에 계좌를 개설한지 1년
+                              미만으로 전문투자자 승인 불가
+                            </p>
+                          </td>
+                          <td>2023-01-10 09:00:00</td>
+                          <td>김관리자</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="form-check m-0">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="flexCheckDefault4"
+                              />
+                            </div>
+                          </td>
+                          <td>4</td>
+                          <td>소득적격</td>
+                          <td>개인전문</td>
+                          <td>
+                            <span class="status">보기</span>
+                          </td>
+                          <td>2023-01-10 09:00:00</td>
+                          <td>
+                            <span class="badge rounded-pill text-bg-warning"
+                              >승인대기</span
+                            >
+                          </td>
+                          <td>
+                            <p class="mb-0">
+                              서류 식별 불가 금융투자업자에 계좌를 개설한지 1년
+                              미만으로 전문투자자 승인 불가
+                            </p>
+                          </td>
+                          <td>2023-01-10 09:00:00</td>
+                          <td>김관리자</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="form-check m-0">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                disabled
+                                id="flexCheckDefault5"
+                              />
+                            </div>
+                          </td>
+                          <td>5</td>
+                          <td>소득적격</td>
+                          <td>개인전문</td>
+                          <td>
+                            <span class="status">보기</span>
+                          </td>
+                          <td>2023-01-10 09:00:00</td>
+                          <td>
+                            <span class="badge rounded-pill text-bg-danger"
+                              >승인거부</span
+                            >
+                          </td>
+                          <td>
+                            <p class="mb-0">
+                              서류 식별 불가 금융투자업자에 계좌를 개설한지 1년
+                              미만으로 전문투자자 승인 불가
+                            </p>
+                          </td>
+                          <td>2023-01-10 09:00:00</td>
+                          <td>김관리자</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="form-check m-0">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="flexCheckDefault6"
+                              />
+                            </div>
+                          </td>
+                          <td>6</td>
+                          <td>소득적격</td>
+                          <td>소득적격</td>
+                          <td>
+                            <span class="status">보기</span>
+                          </td>
+                          <td>2023-01-10 09:00:00</td>
+                          <td>
+                            <span class="badge rounded-pill text-bg-success"
+                              >승인완료</span
+                            >
+                          </td>
+                          <td>
+                            <p class="mb-0">
+                              서류 식별 불가 금융투자업자에 계좌를 개설한지 1년
+                              미만으로 전문투자자 승인 불가
+                            </p>
+                          </td>
+                          <td>2023-01-10 09:00:00</td>
+                          <td>김관리자</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="form-check m-0">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="flexCheckDefault7"
+                              />
+                            </div>
+                          </td>
+                          <td>7</td>
+                          <td>소득적격</td>
+                          <td>개인전문</td>
+                          <td>
+                            <span class="status">보기</span>
+                          </td>
+                          <td>2023-01-10 09:00:00</td>
+                          <td>
+                            <span class="badge rounded-pill text-bg-warning"
+                              >승인대기</span
+                            >
+                          </td>
+                          <td>
+                            <p class="mb-0">
+                              서류 식별 불가 금융투자업자에 계좌를 개설한지 1년
+                              미만으로 전문투자자 승인 불가
+                            </p>
+                          </td>
+                          <td>2023-01-10 09:00:00</td>
+                          <td>김관리자</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="form-check m-0">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                disabled
+                                id="flexCheckDefault8"
+                              />
+                            </div>
+                          </td>
+                          <td>8</td>
+                          <td>소득적격</td>
+                          <td>개인전문</td>
+                          <td>
+                            <span class="status">보기</span>
+                          </td>
+                          <td>2023-01-10 09:00:00</td>
+                          <td>
+                            <span class="badge rounded-pill text-bg-danger"
+                              >승인거부</span
+                            >
+                          </td>
+                          <td>
+                            <p class="mb-0">
+                              서류 식별 불가 금융투자업자에 계좌를 개설한지 1년
+                              미만으로 전문투자자 승인 불가
+                            </p>
+                          </td>
+                          <td>2023-01-10 09:00:00</td>
+                          <td>김관리자</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="form-check m-0">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="flexCheckDefault9"
+                              />
+                            </div>
+                          </td>
+                          <td>9</td>
+                          <td>소득적격</td>
+                          <td>소득적격</td>
+                          <td>
+                            <span class="status">보기</span>
+                          </td>
+                          <td>2023-01-10 09:00:00</td>
+                          <td>
+                            <span class="badge rounded-pill text-bg-success"
+                              >승인완료</span
+                            >
+                          </td>
+                          <td>
+                            <p class="mb-0">
+                              서류 식별 불가 금융투자업자에 계좌를 개설한지 1년
+                              미만으로 전문투자자 승인 불가
+                            </p>
+                          </td>
+                          <td>2023-01-10 09:00:00</td>
+                          <td>김관리자</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="form-check m-0">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="flexCheckDefault10"
+                              />
+                            </div>
+                          </td>
+                          <td>10</td>
+                          <td>소득적격</td>
+                          <td>소득적격</td>
+                          <td>
+                            <span class="status">보기</span>
+                          </td>
+                          <td>2023-01-10 09:00:00</td>
+                          <td>
+                            <span class="badge rounded-pill text-bg-success"
+                              >승인완료</span
+                            >
+                          </td>
+                          <td>
+                            <p class="mb-0">
+                              서류 식별 불가 금융투자업자에 계좌를 개설한지 1년
+                              미만으로 전문투자자 승인 불가
+                            </p>
+                          </td>
+                          <td>2023-01-10 09:00:00</td>
+                          <td>김관리자</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-12 mt-3">
+                  <nav>
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Previous"
+                        >
+                          <span><i class="bi bi-chevron-double-left"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Left"
+                        >
+                          <span><i class="bi bi-chevron-left"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item active">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >1</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >2</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >3</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >4</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >5</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >6</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >7</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >8</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >9</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >10</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Right"
+                        >
+                          <span><i class="bi bi-chevron-right"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Next"
+                        >
+                          <span
+                            ><i class="bi bi-chevron-double-right"></i
+                          ></span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="tab-two-pane">
+              <div class="row align-items-center">
+                <div class="col-md-4 col-12">
+                  <h2 class="text-black font-20 fw-semibold mb-0">
+                    신청 목록
+                    <span class="text-gray font-14 fw-medium mx-2"
+                      >(총 0건 | 승인대기 <u class="text-danger">0</u>명)</span
+                    >
+                  </h2>
+                </div>
+                <div class="col-md-8 col-12 text-end">
+                  <div class="d-flex justify-content-end align-items-center">
+                    <div>
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>승인여부 전체</option>
+                        <option value="1">승인대기</option>
+                        <option value="2">승인완료</option>
+                        <option value="3">승인거부</option>
+                      </select>
+                    </div>
+                    <div class="mx-2">
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>신청일시순</option>
+                        <option value="1">승인일시순</option>
+                      </select>
+                    </div>
+                    <div>
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>50개씩 보기</option>
+                        <option value="1">51개씩 보기</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <hr class="my-3" />
+                </div>
+              </div>
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  <button type="button" class="btn btn-primary px-4">
+                    등록
+                  </button>
+                </div>
+                <div class="col-md-8">
+                  <div class="d-flex justify-content-end align-items-center">
+                    <div>
+                      <h3 class="text-gray font-14 fw-medium lh-normal mb-0">
+                        선택한 0건
+                      </h3>
+                    </div>
+                    <div class="mx-2">
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>승인상태 변경</option>
+                        <option value="1">승인완료</option>
+                        <option value="2">승인거부</option>
+                      </select>
+                    </div>
+                    <div>
+                      <button
+                        type="button"
+                        class="btn btn-primary font-16 fw-semibold px-4"
+                      >
+                        저장
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row my-2">
+                <div class="col-12">
+                  <!-- No Results Table -->
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                            <div class="form-check m-0">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="flexCheckDefault"
+                              />
+                            </div>
+                          </th>
+                          <th>No</th>
+                          <th>기존유형</th>
+                          <th>신청유형</th>
+                          <th>제출서류</th>
+                          <th>신청일시</th>
+                          <th>승인여부</th>
+                          <th>승인거부 사유</th>
+                          <th>승인일시</th>
+                          <th>관리자</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td
+                            class="text-center no-results font-18"
+                            colspan="10"
+                          >
+                            조회 결과가 없습니다.
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-12 mt-3">
+                  <nav>
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Previous"
+                        >
+                          <span><i class="bi bi-chevron-double-left"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Left"
+                        >
+                          <span><i class="bi bi-chevron-left"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item active">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >1</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >2</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >3</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >4</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >5</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >6</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >7</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >8</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >9</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >10</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Right"
+                        >
+                          <span><i class="bi bi-chevron-right"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Next"
+                        >
+                          <span
+                            ><i class="bi bi-chevron-double-right"></i
+                          ></span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="tab-three-pane">
+              <div class="row align-items-center">
+                <div class="col-md-4 col-12">
+                  <h2 class="text-black font-20 fw-semibold mb-0">
+                    신청 목록
+                    <span class="text-gray font-14 fw-medium mx-2"
+                      >(총 0건 | 승인대기 <u class="text-danger">0</u>명)</span
+                    >
+                  </h2>
+                </div>
+                <div class="col-md-8 col-12 text-end">
+                  <div class="d-flex justify-content-end align-items-center">
+                    <div>
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>승인여부 전체</option>
+                        <option value="1">승인대기</option>
+                        <option value="2">승인완료</option>
+                        <option value="3">승인거부</option>
+                      </select>
+                    </div>
+                    <div class="mx-2">
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>신청일시순</option>
+                        <option value="1">승인일시순</option>
+                      </select>
+                    </div>
+                    <div>
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>50개씩 보기</option>
+                        <option value="1">51개씩 보기</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <hr class="my-3" />
+                </div>
+              </div>
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  <button type="button" class="btn btn-primary px-4">
+                    등록
+                  </button>
+                </div>
+                <div class="col-md-8">
+                  <div class="d-flex justify-content-end align-items-center">
+                    <div>
+                      <h3 class="text-gray font-14 fw-medium lh-normal mb-0">
+                        선택한 0건
+                      </h3>
+                    </div>
+                    <div class="mx-2">
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>승인상태 변경</option>
+                        <option value="1">승인완료</option>
+                        <option value="2">승인거부</option>
+                      </select>
+                    </div>
+                    <div>
+                      <button
+                        type="button"
+                        class="btn btn-primary font-16 fw-semibold px-4"
+                      >
+                        저장
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row my-2">
+                <div class="col-12">
+                  <!-- No Results Table -->
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                            <div class="form-check m-0">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="flexCheckDefault"
+                              />
+                            </div>
+                          </th>
+                          <th>No</th>
+                          <th>기존유형</th>
+                          <th>신청유형</th>
+                          <th>제출서류</th>
+                          <th>신청일시</th>
+                          <th>승인여부</th>
+                          <th>승인거부 사유</th>
+                          <th>승인일시</th>
+                          <th>관리자</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td
+                            class="text-center no-results font-18"
+                            colspan="10"
+                          >
+                            조회 결과가 없습니다.
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-12 mt-3">
+                  <nav>
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Previous"
+                        >
+                          <span><i class="bi bi-chevron-double-left"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Left"
+                        >
+                          <span><i class="bi bi-chevron-left"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item active">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >1</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >2</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >3</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >4</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >5</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >6</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >7</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >8</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >9</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >10</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Right"
+                        >
+                          <span><i class="bi bi-chevron-right"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Next"
+                        >
+                          <span
+                            ><i class="bi bi-chevron-double-right"></i
+                          ></span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="tab-four-pane">
+              <div class="row align-items-center">
+                <div class="col-md-4 col-12">
+                  <h2 class="text-black font-20 fw-semibold mb-0">
+                    신청 목록
+                    <span class="text-gray font-14 fw-medium mx-2"
+                      >(총 0건 | 승인대기 <u class="text-danger">0</u>명)</span
+                    >
+                  </h2>
+                </div>
+                <div class="col-md-8 col-12 text-end">
+                  <div class="d-flex justify-content-end align-items-center">
+                    <div>
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>승인여부 전체</option>
+                        <option value="1">승인대기</option>
+                        <option value="2">승인완료</option>
+                        <option value="3">승인거부</option>
+                      </select>
+                    </div>
+                    <div class="mx-2">
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>신청일시순</option>
+                        <option value="1">승인일시순</option>
+                      </select>
+                    </div>
+                    <div>
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>50개씩 보기</option>
+                        <option value="1">51개씩 보기</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <hr class="my-3" />
+                </div>
+              </div>
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  <button type="button" class="btn btn-primary px-4">
+                    등록
+                  </button>
+                </div>
+                <div class="col-md-8">
+                  <div class="d-flex justify-content-end align-items-center">
+                    <div>
+                      <h3 class="text-gray font-14 fw-medium lh-normal mb-0">
+                        선택한 0건
+                      </h3>
+                    </div>
+                    <div class="mx-2">
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>승인상태 변경</option>
+                        <option value="1">승인완료</option>
+                        <option value="2">승인거부</option>
+                      </select>
+                    </div>
+                    <div>
+                      <button
+                        type="button"
+                        class="btn btn-primary font-16 fw-semibold px-4"
+                      >
+                        저장
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row my-2">
+                <div class="col-12">
+                  <!-- No Results Table -->
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                            <div class="form-check m-0">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="flexCheckDefault"
+                              />
+                            </div>
+                          </th>
+                          <th>No</th>
+                          <th>기존유형</th>
+                          <th>신청유형</th>
+                          <th>제출서류</th>
+                          <th>신청일시</th>
+                          <th>승인여부</th>
+                          <th>승인거부 사유</th>
+                          <th>승인일시</th>
+                          <th>관리자</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td
+                            class="text-center no-results font-18"
+                            colspan="10"
+                          >
+                            조회 결과가 없습니다.
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-12 mt-3">
+                  <nav>
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Previous"
+                        >
+                          <span><i class="bi bi-chevron-double-left"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Left"
+                        >
+                          <span><i class="bi bi-chevron-left"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item active">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >1</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >2</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >3</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >4</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >5</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >6</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >7</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >8</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >9</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >10</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Right"
+                        >
+                          <span><i class="bi bi-chevron-right"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Next"
+                        >
+                          <span
+                            ><i class="bi bi-chevron-double-right"></i
+                          ></span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="tab-five-pane">
+              <div class="row align-items-center">
+                <div class="col-md-4 col-12">
+                  <h2 class="text-black font-20 fw-semibold mb-0">
+                    신청 목록
+                    <span class="text-gray font-14 fw-medium mx-2"
+                      >(총 0건 | 승인대기 <u class="text-danger">0</u>명)</span
+                    >
+                  </h2>
+                </div>
+                <div class="col-md-8 col-12 text-end">
+                  <div class="d-flex justify-content-end align-items-center">
+                    <div>
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>승인여부 전체</option>
+                        <option value="1">승인대기</option>
+                        <option value="2">승인완료</option>
+                        <option value="3">승인거부</option>
+                      </select>
+                    </div>
+                    <div class="mx-2">
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>신청일시순</option>
+                        <option value="1">승인일시순</option>
+                      </select>
+                    </div>
+                    <div>
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>50개씩 보기</option>
+                        <option value="1">51개씩 보기</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <hr class="my-3" />
+                </div>
+              </div>
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  <button type="button" class="btn btn-primary px-4">
+                    등록
+                  </button>
+                </div>
+                <div class="col-md-8">
+                  <div class="d-flex justify-content-end align-items-center">
+                    <div>
+                      <h3 class="text-gray font-14 fw-medium lh-normal mb-0">
+                        선택한 0건
+                      </h3>
+                    </div>
+                    <div class="mx-2">
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>승인상태 변경</option>
+                        <option value="1">승인완료</option>
+                        <option value="2">승인거부</option>
+                      </select>
+                    </div>
+                    <div>
+                      <button
+                        type="button"
+                        class="btn btn-primary font-16 fw-semibold px-4"
+                      >
+                        저장
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row my-2">
+                <div class="col-12">
+                  <!-- No Results Table -->
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                            <div class="form-check m-0">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="flexCheckDefault"
+                              />
+                            </div>
+                          </th>
+                          <th>No</th>
+                          <th>기존유형</th>
+                          <th>신청유형</th>
+                          <th>제출서류</th>
+                          <th>신청일시</th>
+                          <th>승인여부</th>
+                          <th>승인거부 사유</th>
+                          <th>승인일시</th>
+                          <th>관리자</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td
+                            class="text-center no-results font-18"
+                            colspan="10"
+                          >
+                            조회 결과가 없습니다.
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-12 mt-3">
+                  <nav>
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Previous"
+                        >
+                          <span><i class="bi bi-chevron-double-left"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Left"
+                        >
+                          <span><i class="bi bi-chevron-left"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item active">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >1</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >2</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >3</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >4</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >5</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >6</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >7</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >8</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >9</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >10</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Right"
+                        >
+                          <span><i class="bi bi-chevron-right"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Next"
+                        >
+                          <span
+                            ><i class="bi bi-chevron-double-right"></i
+                          ></span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="tab-six-pane">
+              <div class="row align-items-center">
+                <div class="col-md-4 col-12">
+                  <h2 class="text-black font-20 fw-semibold mb-0">
+                    신청 목록
+                    <span class="text-gray font-14 fw-medium mx-2"
+                      >(총 0건 | 승인대기 <u class="text-danger">0</u>명)</span
+                    >
+                  </h2>
+                </div>
+                <div class="col-md-8 col-12 text-end">
+                  <div class="d-flex justify-content-end align-items-center">
+                    <div>
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>승인여부 전체</option>
+                        <option value="1">승인대기</option>
+                        <option value="2">승인완료</option>
+                        <option value="3">승인거부</option>
+                      </select>
+                    </div>
+                    <div class="mx-2">
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>신청일시순</option>
+                        <option value="1">승인일시순</option>
+                      </select>
+                    </div>
+                    <div>
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>50개씩 보기</option>
+                        <option value="1">51개씩 보기</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <hr class="my-3" />
+                </div>
+              </div>
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  <button type="button" class="btn btn-primary px-4">
+                    등록
+                  </button>
+                </div>
+                <div class="col-md-8">
+                  <div class="d-flex justify-content-end align-items-center">
+                    <div>
+                      <h3 class="text-gray font-14 fw-medium lh-normal mb-0">
+                        선택한 0건
+                      </h3>
+                    </div>
+                    <div class="mx-2">
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>승인상태 변경</option>
+                        <option value="1">승인완료</option>
+                        <option value="2">승인거부</option>
+                      </select>
+                    </div>
+                    <div>
+                      <button
+                        type="button"
+                        class="btn btn-primary font-16 fw-semibold px-4"
+                      >
+                        저장
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row my-2">
+                <div class="col-12">
+                  <!-- No Results Table -->
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                            <div class="form-check m-0">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="flexCheckDefault"
+                              />
+                            </div>
+                          </th>
+                          <th>No</th>
+                          <th>기존유형</th>
+                          <th>신청유형</th>
+                          <th>제출서류</th>
+                          <th>신청일시</th>
+                          <th>승인여부</th>
+                          <th>승인거부 사유</th>
+                          <th>승인일시</th>
+                          <th>관리자</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td
+                            class="text-center no-results font-18"
+                            colspan="10"
+                          >
+                            조회 결과가 없습니다.
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-12 mt-3">
+                  <nav>
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Previous"
+                        >
+                          <span><i class="bi bi-chevron-double-left"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Left"
+                        >
+                          <span><i class="bi bi-chevron-left"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item active">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >1</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >2</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >3</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >4</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >5</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >6</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >7</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >8</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >9</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >10</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Right"
+                        >
+                          <span><i class="bi bi-chevron-right"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Next"
+                        >
+                          <span
+                            ><i class="bi bi-chevron-double-right"></i
+                          ></span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="tab-seven-pane">
+              <div class="row align-items-center">
+                <div class="col-md-4 col-12">
+                  <h2 class="text-black font-20 fw-semibold mb-0">
+                    신청 목록
+                    <span class="text-gray font-14 fw-medium mx-2"
+                      >(총 0건 | 승인대기 <u class="text-danger">0</u>명)</span
+                    >
+                  </h2>
+                </div>
+                <div class="col-md-8 col-12 text-end">
+                  <div class="d-flex justify-content-end align-items-center">
+                    <div>
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>승인여부 전체</option>
+                        <option value="1">승인대기</option>
+                        <option value="2">승인완료</option>
+                        <option value="3">승인거부</option>
+                      </select>
+                    </div>
+                    <div class="mx-2">
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>신청일시순</option>
+                        <option value="1">승인일시순</option>
+                      </select>
+                    </div>
+                    <div>
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>50개씩 보기</option>
+                        <option value="1">51개씩 보기</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <hr class="my-3" />
+                </div>
+              </div>
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  <button type="button" class="btn btn-primary px-4">
+                    등록
+                  </button>
+                </div>
+                <div class="col-md-8">
+                  <div class="d-flex justify-content-end align-items-center">
+                    <div>
+                      <h3 class="text-gray font-14 fw-medium lh-normal mb-0">
+                        선택한 0건
+                      </h3>
+                    </div>
+                    <div class="mx-2">
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>승인상태 변경</option>
+                        <option value="1">승인완료</option>
+                        <option value="2">승인거부</option>
+                      </select>
+                    </div>
+                    <div>
+                      <button
+                        type="button"
+                        class="btn btn-primary font-16 fw-semibold px-4"
+                      >
+                        저장
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row my-2">
+                <div class="col-12">
+                  <!-- No Results Table -->
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                            <div class="form-check m-0">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="flexCheckDefault"
+                              />
+                            </div>
+                          </th>
+                          <th>No</th>
+                          <th>기존유형</th>
+                          <th>신청유형</th>
+                          <th>제출서류</th>
+                          <th>신청일시</th>
+                          <th>승인여부</th>
+                          <th>승인거부 사유</th>
+                          <th>승인일시</th>
+                          <th>관리자</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td
+                            class="text-center no-results font-18"
+                            colspan="10"
+                          >
+                            조회 결과가 없습니다.
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-12 mt-3">
+                  <nav>
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Previous"
+                        >
+                          <span><i class="bi bi-chevron-double-left"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Left"
+                        >
+                          <span><i class="bi bi-chevron-left"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item active">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >1</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >2</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >3</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >4</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >5</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >6</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >7</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >8</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >9</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >10</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Right"
+                        >
+                          <span><i class="bi bi-chevron-right"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Next"
+                        >
+                          <span
+                            ><i class="bi bi-chevron-double-right"></i
+                          ></span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="tab-eight-pane">
+              <div class="row align-items-center">
+                <div class="col-md-4 col-12">
+                  <h2 class="text-black font-20 fw-semibold mb-0">
+                    신청 목록
+                    <span class="text-gray font-14 fw-medium mx-2"
+                      >(총 0건 | 승인대기 <u class="text-danger">0</u>명)</span
+                    >
+                  </h2>
+                </div>
+                <div class="col-md-8 col-12 text-end">
+                  <div class="d-flex justify-content-end align-items-center">
+                    <div>
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>승인여부 전체</option>
+                        <option value="1">승인대기</option>
+                        <option value="2">승인완료</option>
+                        <option value="3">승인거부</option>
+                      </select>
+                    </div>
+                    <div class="mx-2">
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>신청일시순</option>
+                        <option value="1">승인일시순</option>
+                      </select>
+                    </div>
+                    <div>
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>50개씩 보기</option>
+                        <option value="1">51개씩 보기</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <hr class="my-3" />
+                </div>
+              </div>
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  <button type="button" class="btn btn-primary px-4">
+                    등록
+                  </button>
+                </div>
+                <div class="col-md-8">
+                  <div class="d-flex justify-content-end align-items-center">
+                    <div>
+                      <h3 class="text-gray font-14 fw-medium lh-normal mb-0">
+                        선택한 0건
+                      </h3>
+                    </div>
+                    <div class="mx-2">
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>승인상태 변경</option>
+                        <option value="1">승인완료</option>
+                        <option value="2">승인거부</option>
+                      </select>
+                    </div>
+                    <div>
+                      <button
+                        type="button"
+                        class="btn btn-primary font-16 fw-semibold px-4"
+                      >
+                        저장
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row my-2">
+                <div class="col-12">
+                  <!-- No Results Table -->
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                            <div class="form-check m-0">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="flexCheckDefault"
+                              />
+                            </div>
+                          </th>
+                          <th>No</th>
+                          <th>기존유형</th>
+                          <th>신청유형</th>
+                          <th>제출서류</th>
+                          <th>신청일시</th>
+                          <th>승인여부</th>
+                          <th>승인거부 사유</th>
+                          <th>승인일시</th>
+                          <th>관리자</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td
+                            class="text-center no-results font-18"
+                            colspan="10"
+                          >
+                            조회 결과가 없습니다.
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-12 mt-3">
+                  <nav>
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Previous"
+                        >
+                          <span><i class="bi bi-chevron-double-left"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Left"
+                        >
+                          <span><i class="bi bi-chevron-left"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item active">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >1</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >2</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >3</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >4</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >5</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >6</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >7</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >8</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >9</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >10</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Right"
+                        >
+                          <span><i class="bi bi-chevron-right"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Next"
+                        >
+                          <span
+                            ><i class="bi bi-chevron-double-right"></i
+                          ></span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="tab-nine-pane">
+              <div class="row align-items-center">
+                <div class="col-md-4 col-12">
+                  <h2 class="text-black font-20 fw-semibold mb-0">
+                    신청 목록
+                    <span class="text-gray font-14 fw-medium mx-2"
+                      >(총 0건 | 승인대기 <u class="text-danger">0</u>명)</span
+                    >
+                  </h2>
+                </div>
+                <div class="col-md-8 col-12 text-end">
+                  <div class="d-flex justify-content-end align-items-center">
+                    <div>
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>승인여부 전체</option>
+                        <option value="1">승인대기</option>
+                        <option value="2">승인완료</option>
+                        <option value="3">승인거부</option>
+                      </select>
+                    </div>
+                    <div class="mx-2">
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>신청일시순</option>
+                        <option value="1">승인일시순</option>
+                      </select>
+                    </div>
+                    <div>
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>50개씩 보기</option>
+                        <option value="1">51개씩 보기</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <hr class="my-3" />
+                </div>
+              </div>
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  <button type="button" class="btn btn-primary px-4">
+                    등록
+                  </button>
+                </div>
+                <div class="col-md-8">
+                  <div class="d-flex justify-content-end align-items-center">
+                    <div>
+                      <h3 class="text-gray font-14 fw-medium lh-normal mb-0">
+                        선택한 0건
+                      </h3>
+                    </div>
+                    <div class="mx-2">
+                      <select
+                        class="form-select rounded-8 bg-white shadow-none"
+                      >
+                        <option selected>승인상태 변경</option>
+                        <option value="1">승인완료</option>
+                        <option value="2">승인거부</option>
+                      </select>
+                    </div>
+                    <div>
+                      <button
+                        type="button"
+                        class="btn btn-primary font-16 fw-semibold px-4"
+                      >
+                        저장
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row my-2">
+                <div class="col-12">
+                  <!-- No Results Table -->
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                            <div class="form-check m-0">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="flexCheckDefault"
+                              />
+                            </div>
+                          </th>
+                          <th>No</th>
+                          <th>기존유형</th>
+                          <th>신청유형</th>
+                          <th>제출서류</th>
+                          <th>신청일시</th>
+                          <th>승인여부</th>
+                          <th>승인거부 사유</th>
+                          <th>승인일시</th>
+                          <th>관리자</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td
+                            class="text-center no-results font-18"
+                            colspan="10"
+                          >
+                            조회 결과가 없습니다.
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-12 mt-3">
+                  <nav>
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Previous"
+                        >
+                          <span><i class="bi bi-chevron-double-left"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Left"
+                        >
+                          <span><i class="bi bi-chevron-left"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item active">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >1</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >2</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >3</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >4</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >5</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >6</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >7</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >8</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >9</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link border-0" href="javascript:void(0);"
+                          >10</a
+                        >
+                      </li>
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Right"
+                        >
+                          <span><i class="bi bi-chevron-right"></i></span>
+                        </a>
+                      </li>
+                      <li class="page-item">
+                        <a
+                          class="page-link border-0"
+                          href="javascript:void(0);"
+                          aria-label="Next"
+                        >
+                          <span
+                            ><i class="bi bi-chevron-double-right"></i
+                          ></span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal One -->
+    <div class="modal fade" id="modal-one">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content bg-white">
+          <div class="modal-header px-4">
+            <h1 class="modal-title font-18 fw-semibold text-black">
+              투자유형 변경
+            </h1>
+            <button
+              type="button"
+              class="btn-close shadow-none"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body px-4 pt-4">
+            <div class="row">
+              <div class="col-12">
+                <form>
+                  <div class="modal-form mb-3">
+                    <div class="row align-items-center">
+                      <label for="input1" class="col-sm-2 col-form-label"
+                        >회원번호</label
+                      >
+                      <div class="col-sm-10">
+                        <input
+                          type="text"
+                          class="form-control shadow-none bg-transparent border-0 rounded-0"
+                          id="input1"
+                          value="abc111"
+                        />
+                      </div>
+                    </div>
+                    <div class="row align-items-center">
+                      <label for="input2" class="col-sm-2 col-form-label"
+                        >회원명/법인명</label
+                      >
+                      <div class="col-sm-10">
+                        <input
+                          type="text"
+                          class="form-control shadow-none bg-transparent border-0 rounded-0"
+                          id="input2"
+                          value="김길동"
+                        />
+                      </div>
+                    </div>
+                    <div class="row align-items-center">
+                      <label for="select1" class="col-sm-2 col-form-label"
+                        >투자유형
+                        <span class="required-field position-relative"></span
+                      ></label>
+                      <div class="col-sm-10">
+                        <select
+                          class="form-select rounded-8 bg-white shadow-none w-50"
+                        >
+                          <option selected>일반개인</option>
+                          <option value="1">소득적격</option>
+                          <option value="2">개인전문</option>
+                          <option value="3">법인</option>
+                          <option value="4">여신금융</option>
+                          <option value="5">P2P온투</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row align-items-center">
+                      <label for="select1" class="col-sm-2 col-form-label"
+                        >서류첨부
+                        <span class="required-field position-relative"></span
+                      ></label>
+                      <div class="col-sm-10">
+                        <div
+                          id="fileSelectionContainer"
+                          class="d-flex align-items-center"
+                        >
+                          <span class="btn btn-light btn-file">
+                            파일 선택
+                            <input
+                              type="file"
+                              id="formFile"
+                              accept=".pdf, image/*"
+                              multiple="true"
+                            />
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <ul class="ps-4 ul-list-form">
+                      <li class="pb-2">
+                        파일 형식은 jpg, jpeg, gif, png, pdf만 가능합니다.
+                      </li>
+                      <li class="pb-2">
+                        최대 10개, 100MB까지 등록이 가능합니다.
+                      </li>
+                    </ul>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button
+              type="button"
+              data-bs-target="#modal-form-two"
+              data-bs-toggle="modal"
+              class="btn btn-primary px-5"
+            >
+              저장
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-secondary px-5"
+              data-bs-target="#warning-modal"
+              data-bs-toggle="modal"
+            >
+              취소
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal One -->
+    <div class="modal fade" id="modal-form-two">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content bg-white">
+          <div class="modal-header px-4">
+            <h1 class="modal-title font-18 fw-semibold text-black">
+              승인거부 사유 입력
+            </h1>
+            <button
+              type="button"
+              class="btn-close shadow-none"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body px-4 pt-4">
+            <div class="row">
+              <div class="col-12">
+                <form>
+                  <div class="modal-form mb-3">
+                    <div class="row align-items-center">
+                      <label for="input1" class="col-sm-2 col-form-label"
+                        >회원번호</label
+                      >
+                      <div class="col-sm-10">
+                        <input
+                          type="text"
+                          class="form-control shadow-none bg-transparent border-0 rounded-0"
+                          id="input1"
+                          value="abc111, abc222"
+                        />
+                      </div>
+                    </div>
+                    <div class="row align-items-center">
+                      <label for="input2" class="col-sm-2 col-form-label"
+                        >회원명/법인명</label
+                      >
+                      <div class="col-sm-10">
+                        <input
+                          type="text"
+                          class="form-control shadow-none bg-transparent border-0 rounded-0"
+                          id="input2"
+                          value="김길동, ㈜가나다라투자"
+                        />
+                      </div>
+                    </div>
+                    <div class="row align-items-center bg-grey">
+                      <label for="select1" class="col-sm-2 col-form-label"
+                        >승인거부 사유
+                        <span class="required-field position-relative"></span
+                      ></label>
+                      <div class="col-sm-10 bg-white">
+                        <div class="p-3">
+                          <div class="form-check mb-2">
+                            <input
+                              class="form-check-input check"
+                              type="checkbox"
+                              onclick="toggleTextarea()"
+                              id="1"
+                            />
+                            <label
+                              class="form-check-label font-14 mt-1 fw-normal"
+                              for="1"
+                            >
+                              서류 식별 불가
+                            </label>
+                          </div>
+                          <div class="form-check mb-2">
+                            <input
+                              class="form-check-input check"
+                              type="checkbox"
+                              onclick="toggleTextarea()"
+                              id="2"
+                            />
+                            <label
+                              class="form-check-label font-14 mt-1 fw-normal"
+                              for="2"
+                            >
+                              필수 서류 누락
+                            </label>
+                          </div>
+                          <div class="form-check mb-2">
+                            <input
+                              class="form-check-input check"
+                              type="checkbox"
+                              onclick="toggleTextarea()"
+                              id="3"
+                            />
+                            <label
+                              class="form-check-label font-14 mt-1 fw-normal"
+                              for="3"
+                            >
+                              서류의 내용이 등록된 회원정보와 다름
+                            </label>
+                          </div>
+                          <div class="form-check mb-2">
+                            <input
+                              class="form-check-input check"
+                              type="checkbox"
+                              onclick="toggleTextarea()"
+                              id="4"
+                            />
+                            <label
+                              class="form-check-label font-14 mt-1 fw-normal"
+                              for="4"
+                            >
+                              서류에 누락된 내용이 있음 (필수정보, 회사직인,
+                              본인날인, 본인서명 등)
+                            </label>
+                          </div>
+                          <div class="form-check mb-2">
+                            <input
+                              class="form-check-input check"
+                              type="checkbox"
+                              onclick="toggleTextarea()"
+                              id="5"
+                            />
+                            <label
+                              class="form-check-label font-14 mt-1 fw-normal"
+                              for="5"
+                            >
+                              서류의 유효기간이 초과됨
+                            </label>
+                          </div>
+                          <div class="form-check mb-2">
+                            <input
+                              class="form-check-input check"
+                              type="checkbox"
+                              onclick="toggleTextarea()"
+                              id="6"
+                            />
+                            <label
+                              class="form-check-label font-14 mt-1 fw-normal"
+                              for="6"
+                            >
+                              직접 입력
+                            </label>
+                          </div>
+                          <textarea
+                            class="form-control"
+                            disabled
+                            id="exampleFormControlTextarea1"
+                            rows="3"
+                            placeholder="사유 입력"
+                          ></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button
+              type="button"
+              data-bs-target="#success-modal"
+              data-bs-toggle="modal"
+              class="btn btn-primary px-5"
+            >
+              저장
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-secondary px-5"
+              data-bs-dismiss="modal"
+            >
+              취소
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Success -->
+    <div class="modal fade" id="success-modal">
+      <div class="modal-dialog sm modal-dialog-centered">
+        <div class="modal-content bg-white">
+          <div class="modal-header border-0 pt-2 pb-0 px-4">
+            <h1 class="modal-title">
+              <img
+                src="./assets/img/success-icon.png"
+                alt="Success Icon"
+                class="img-fluid"
+                height="34"
+                width="34"
+              />
+            </h1>
+            <button
+              type="button"
+              class="btn-close shadow-none"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body px-4">
+            <div class="row">
+              <div class="col-12">
+                <h4 class="text-black font-18 fw-semibold mb-4">
+                  저장되었습니다.
+                </h4>
+              </div>
+              <div class="col-12 mt-2 text-center">
+                <button
+                  type="button"
+                  data-bs-target="#details-modal"
+                  data-bs-toggle="modal"
+                  class="btn btn-primary px-5"
+                >
+                  확인
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Warning -->
+    <div class="modal fade" id="warning-modal">
+      <div class="modal-dialog sm modal-dialog-centered">
+        <div class="modal-content bg-white">
+          <div class="modal-header border-0 pt-2 pb-0 px-3">
+            <h1 class="modal-title">
+              <img
+                src="./assets/img/warning-icon.png"
+                alt="Warning Icon"
+                class="img-fluid"
+                height="34"
+                width="34"
+              />
+            </h1>
+            <button
+              type="button"
+              class="btn-close shadow-none"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body px-3">
+            <div class="row">
+              <div class="col-12">
+                <h4 class="text-black font-18 fw-semibold mb-4">
+                  jpg, jpeg, gif, png, pdf 파일만 등록 가능합니다.
+                </h4>
+              </div>
+              <div class="col-12 mt-2 text-center">
+                <button
+                  type="button"
+                  data-bs-dismiss="modal"
+                  class="btn btn-primary px-5"
+                >
+                  확인
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Details Modal One -->
+    <div class="modal fade" id="details-modal">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content bg-white">
+          <div class="modal-header px-4">
+            <h1 class="modal-title font-18 fw-semibold text-black">
+              승인거부 사유 확인
+            </h1>
+            <button
+              type="button"
+              class="btn-close shadow-none"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body px-4 pt-4">
+            <div class="row">
+              <div class="col-12">
+                <form>
+                  <div class="modal-form mb-3">
+                    <div class="row align-items-center">
+                      <label for="input1" class="col-sm-2 col-form-label"
+                        >회원번호</label
+                      >
+                      <div class="col-sm-10">
+                        <input
+                          type="text"
+                          class="form-control shadow-none bg-transparent border-0 rounded-0"
+                          id="input1"
+                          value="abc111, abc222"
+                        />
+                      </div>
+                    </div>
+                    <div class="row align-items-center">
+                      <label for="input2" class="col-sm-2 col-form-label"
+                        >회원명/법인명</label
+                      >
+                      <div class="col-sm-10">
+                        <input
+                          type="text"
+                          class="form-control shadow-none bg-transparent border-0 rounded-0"
+                          id="input2"
+                          value="김길동, ㈜가나다라투자"
+                        />
+                      </div>
+                    </div>
+                    <div class="row align-items-center bg-grey">
+                      <label for="select1" class="col-sm-2 col-form-label"
+                        >승인거부 사유
+                        <span class="required-field position-relative"></span
+                      ></label>
+                      <div class="col-sm-10 bg-white">
+                        <div class="p-3">
+                          <div class="form-check mb-2">
+                            <input
+                              class="form-check-input check"
+                              type="checkbox"
+                              disabled
+                              id="1"
+                            />
+                            <label
+                              class="form-check-label font-14 mt-1 fw-normal"
+                              for="1"
+                            >
+                              서류 식별 불가
+                            </label>
+                          </div>
+                          <div class="form-check mb-2">
+                            <input
+                              class="form-check-input check"
+                              type="checkbox"
+                              disabled
+                              id="2"
+                            />
+                            <label
+                              class="form-check-label font-14 mt-1 fw-normal"
+                              for="2"
+                            >
+                              필수 서류 누락
+                            </label>
+                          </div>
+                          <div class="form-check mb-2">
+                            <input
+                              class="form-check-input check"
+                              type="checkbox"
+                              disabled
+                              id="3"
+                            />
+                            <label
+                              class="form-check-label font-14 mt-1 fw-normal"
+                              for="3"
+                            >
+                              서류의 내용이 등록된 회원정보와 다름
+                            </label>
+                          </div>
+                          <div class="form-check mb-2">
+                            <input
+                              class="form-check-input check"
+                              type="checkbox"
+                              disabled
+                              id="4"
+                            />
+                            <label
+                              class="form-check-label font-14 mt-1 fw-normal"
+                              for="4"
+                            >
+                              서류에 누락된 내용이 있음 (필수정보, 회사직인,
+                              본인날인, 본인서명 등)
+                            </label>
+                          </div>
+                          <div class="form-check mb-2">
+                            <input
+                              class="form-check-input check"
+                              type="checkbox"
+                              disabled
+                              id="5"
+                            />
+                            <label
+                              class="form-check-label font-14 mt-1 fw-normal"
+                              for="5"
+                            >
+                              서류의 유효기간이 초과됨
+                            </label>
+                          </div>
+                          <div class="form-check mb-2">
+                            <input
+                              class="form-check-input check"
+                              type="checkbox"
+                              disabled
+                              checked
+                              id="6"
+                            />
+                            <label
+                              class="form-check-label font-14 mt-1 fw-normal"
+                              for="6"
+                            >
+                              직접 입력
+                            </label>
+                          </div>
+                          <textarea
+                            class="form-control"
+                            disabled
+                            id="exampleFormControlTextarea1"
+                            rows="3"
+                            placeholder="사유 입력"
+                          >
+금융투자업자에 계좌를 개설한지 1년 미만으로 전문투자자 승인 불가  금융투자업자에 계좌를 개설한지 1년 미만으로 전문투자자 승인 불가 금융투자업자에 계좌를 개설한지 1년 미만으로 전문투자자 승인 불가 금융투자업자에 계좌를 개설한지 1년 미만으로 전문투자자 승인 불가 금융투자업자에 계좌를 개설한지 1년 미만으로 전문투자자 승인 불가 금융투자업자에 계좌를 개설한지 1년 미만으로 전문투자자 승인 불가금융투자업자에 계좌를 개설한지 1년 미만으로 전문투자자 승인 불가</textarea
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 col-12">
+                      <div class="modal-form mb-3">
+                        <div class="row align-items-center">
+                          <label class="col-sm-4 col-form-label"
+                            >최근저장일시</label
+                          >
+                          <div class="col-sm-8">
+                            <input
+                              type="text"
+                              class="form-control shadow-none bg-transparent border-0 rounded-0"
+                              value="2022-01-01 09:00:00"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                      <div class="modal-form mb-3">
+                        <div class="row align-items-center">
+                          <label class="col-sm-4 col-form-label">관리자</label>
+                          <div class="col-sm-8">
+                            <input
+                              type="text"
+                              class="form-control shadow-none bg-transparent border-0 rounded-0"
+                              value="김관리자"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button
+              type="button"
+              data-bs-target="#images-modal"
+              data-bs-toggle="modal"
+              class="btn btn-primary px-5"
+            >
+              확인
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Details Modal Two -->
+    <div class="modal fade" id="images-modal">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content bg-white">
+          <div class="modal-header px-4">
+            <h1 class="modal-title font-18 fw-semibold text-black">
+              서류 보기
+            </h1>
+            <button
+              type="button"
+              class="btn-close shadow-none"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body px-4 pt-4">
+            <div class="row">
+              <div class="col-12">
+                <div class="modal-form mb-0">
+                  <div class="row rounded-10 align-items-center bg-grey">
+                    <label class="col-sm-2 col-form-label"
+                      >서류
+                      <span class="required-field position-relative"></span
+                    ></label>
+                    <div class="col-sm-10 rounded-right-10 bg-white p-3 scroll-img">
+						<div class="">
+							<div class="img-box d-flex mb-2 justify-content-center align-items-center">
+								<h5 class="text-gray font-20 fw-medium">img</h5>
+							</div>
+							<div class="img-box d-flex mb-2 justify-content-center align-items-center">
+								<h5 class="text-gray font-20 fw-medium">img</h5>
+							</div>
+							<div class="img-box d-flex mb-2 justify-content-center align-items-center">
+								<h5 class="text-gray font-20 fw-medium">img</h5>
+							</div>
+						</div>
+					</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button
+              type="button"
+              class="btn btn-outline-secondary px-4"
+              data-bs-dismiss="modal"
+            >
+              파일 다운로드
+            </button>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="btn btn-primary px-5"
+            >
+              확인
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Popper CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <!-- JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+    <script src="./assets/js/jquery.min.js"></script>
+    <script>
+      // For file uploading and getting selected file name
+      document
+        .getElementById("formFile")
+        .addEventListener("change", function (event) {
+          const files = event.target.files;
+          const container = document.getElementById("fileSelectionContainer");
+
+          for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            const fileName = file.name;
+
+            const fileDisplay = document.createElement("div");
+            fileDisplay.classList.add("selected-file");
+
+            const fileNameDisplay = document.createElement("span");
+            fileNameDisplay.classList.add("file-name");
+            fileNameDisplay.textContent = fileName;
+
+            const closeIcon = document.createElement("span");
+            closeIcon.classList.add("close-icon");
+            closeIcon.innerHTML = "&times;";
+            closeIcon.addEventListener("click", function () {
+              fileDisplay.remove();
+            });
+
+            fileDisplay.appendChild(fileNameDisplay);
+            fileDisplay.appendChild(closeIcon);
+            container.appendChild(fileDisplay);
+          }
+        });
+
+      // Close first modal issues
+      var secondModal = document.getElementById("modal-form-two");
+
+      secondModal.addEventListener("hidden.bs.modal", function () {
+        $("#modal-one").modal("hide");
+      });
+
+      //  Close second modal
+      var successmodal = document.getElementById("success-modal");
+
+      successmodal.addEventListener("hidden.bs.modal", function () {
+        $("#modal-form-two").modal("hide");
+      });
+
+      var warningmodal = document.getElementById("warning-modal");
+
+      warningmodal.addEventListener("hidden.bs.modal", function () {
+        $("#modal-one").modal("hide");
+      });
+
+      var detailsmodal = document.getElementById("details-modal");
+
+      detailsmodal.addEventListener("hidden.bs.modal", function () {
+        $("#success-modal").modal("hide");
+      });
+
+      var imagesmodal = document.getElementById("images-modal");
+
+      imagesmodal.addEventListener("hidden.bs.modal", function () {
+        $("#details-modal").modal("hide");
+      });
+
+      //   Checkbox toggle
+      function toggleTextarea() {
+        var checkboxes = document.querySelectorAll(
+          'input[class="form-check-input check"]'
+        );
+        var textarea = document.getElementById("exampleFormControlTextarea1");
+        var checked = false;
+
+        // Check if any checkbox is checked
+        checkboxes.forEach(function (checkbox) {
+          if (checkbox.checked) {
+            checked = true;
+          }
+        });
+
+        // Enable or disable textarea based on checkbox status
+        if (checked) {
+          textarea.disabled = false;
+        } else {
+          textarea.disabled = true;
+        }
+      }
+    </script>
+  </body>
 </html>
